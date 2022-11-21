@@ -1,0 +1,49 @@
+<ng-container [ngSwitch]="buttonMode()">
+  <button
+    *ngSwitchCase="'button'"
+    class="button focus-link"
+    [ngClass]="'btn-' + buttonTheme"
+    [attr.aria-label]="ariaLabel"
+    [attr.disabled]="isDisabled ? true : null"
+    [attr.type]="buttonType"
+  >
+    <img *ngIf="iconPath" alt="" class="btn-icon" [src]="iconPath" />
+    <span class="button-text">
+      <ng-container *ngIf="!!buttonText"> {{ buttonText }} </ng-container>
+      <ng-container *ngTemplateOutlet="buttonContent"> </ng-container>
+    </span>
+  </button>
+
+  <a
+    *ngSwitchCase="'internalURL'"
+    class="button focus-link"
+    [ngClass]="'btn-' + buttonTheme"
+    [routerLink]="redirectURL"
+    [queryParams]="queryParams"
+    [attr.aria-label]="ariaLabel"
+    [attr.role]="roleType"
+  >
+    <img *ngIf="iconPath" class="btn-icon" [src]="iconPath" />
+    <span class="button-text">
+      <ng-container *ngIf="!!buttonText"> {{ buttonText }} </ng-container>
+      <ng-container *ngTemplateOutlet="buttonContent"> </ng-container>
+    </span>
+  </a>
+
+  <a
+    *ngSwitchCase="'externalURL'"
+    class="button focus-link"
+    [ngClass]="'btn-' + buttonTheme"
+    [href]="redirectURL"
+    [attr.target]="isTargetBlank ? '_blank' : null"
+    [attr.rel]="isTargetBlank ? 'noopener noreferrer' : null"
+    [attr.aria-label]="ariaLabel"
+    [attr.role]="roleType"
+  >
+    <img *ngIf="iconPath" class="btn-icon" [src]="iconPath" />
+    <span class="button-text">
+      <ng-container *ngIf="!!buttonText"> {{ buttonText }} </ng-container>
+      <ng-container *ngTemplateOutlet="buttonContent"> </ng-container>
+    </span>
+  </a>
+</ng-container>

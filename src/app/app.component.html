@@ -1,0 +1,100 @@
+<h1>Practical Angular Directives</h1>
+<a
+  target="_blank"
+  href="https://slides.com/tuantrungvo/angular-directives-practical-use-cases"
+  >View slides ↗️</a
+>
+
+<h2>1. Think CSS Selector</h2>
+<h3>Open link a new tab use case</h3>
+<div class="flex-col">
+  <a href="https://trungk18.com/" target="_blank"> Safe Link Auto Opt-in </a>
+
+  <a href="https://trungk18.com/" target="_blank" ngSafeLink>
+    Safe Link Manually Directive
+  </a>
+</div>
+
+<h2>2. Augmenting native elements</h2>
+
+<h3>Custom component approach</h3>
+
+<div class="flex-col">
+  <shared-button
+    [buttonClass]="'item-button-wrapper login-button-wrapper'"
+    [buttonText]="'Login'"
+  >
+  </shared-button>
+
+  <shared-button
+    [buttonClass]="'item-button-wrapper login-button-wrapper'"
+    [buttonContent]="twitterBtnTmpl"
+  >
+    <ng-template #twitterBtnTmpl>
+      Twitter <twitter-icon class="btn-icon"></twitter-icon>
+    </ng-template>
+  </shared-button>
+
+  <shared-button
+    [buttonContent]="readmoreTmpl"
+    [buttonTheme]="'primary'"
+    [isTargetBlank]="true"
+    redirectURL="https://trungk18.com/"
+  >
+    <ng-template #readmoreTmpl> Readmore ↗ </ng-template>
+  </shared-button>
+</div>
+
+<h3>Component as attribute selector approach</h3>
+
+<div class="flex-col">
+  <button shared-button class="item-button-wrapper login-button-wrapper">
+    Login
+  </button>
+
+  <button shared-button class="item-button-wrapper login-button-wrapper">
+    Twitter
+    <twitter-icon class="btn-icon"></twitter-icon>
+  </button>
+
+  <a
+    shared-button
+    [buttonTheme]="'primary'"
+    target="_blank"
+    href="https://trungk18.com/"
+  >
+    Readmore ↗
+  </a>
+</div>
+
+<h2>3. Configure for specific use case</h2>
+
+<pre>
+  @Component(&#123;	
+    selector: '
+      shared-button[buttonText]:not([buttonContent]),
+      shared-button[buttonContent]:not([buttonText]),
+    templateUrl: './button.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+  &#125;)
+</pre>
+
+<h2>4. Directive Context</h2>
+<div class="flex-col">
+  <p-calendar
+    [(ngModel)]="date"
+    id="date"
+    name="date"
+    dateFormat="dd/mm/yy"
+    [showIcon]="true"
+    [showButtonBar]="true"
+    [monthNavigator]="true"
+    [yearNavigator]="true"
+    [firstDayOfWeek]="1"
+  >
+  </p-calendar>
+
+  <p-calendar [(ngModel)]="date" id="date" name="date"> </p-calendar>
+
+  <p-calendar [showButtonBar]="false"></p-calendar>
+</div>

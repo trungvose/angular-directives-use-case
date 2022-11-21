@@ -1,0 +1,9 @@
+p {
+  font-family: Lato;
+}
+
+.btn-icon {
+  padding-left: 5px;
+  position: relative;
+  top: 2px;
+}
