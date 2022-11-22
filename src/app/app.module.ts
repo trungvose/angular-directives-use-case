@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
@@ -13,6 +13,7 @@ import { SafeLinkDirective } from './safe-link.directive';
 import { CalendarModule } from 'primeng/calendar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarDirective } from './p-calendar.directive';
+import { ShareCalendar } from './shared-calendar.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { CalendarDirective } from './p-calendar.directive';
     RouterModule,
     CalendarModule,
     NoopAnimationsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AppComponent,
@@ -31,6 +33,7 @@ import { CalendarDirective } from './p-calendar.directive';
     SafeLinkGlobalDirective,
     TwitterIconComponent,
     CalendarDirective,
+    ShareCalendar,
   ],
   bootstrap: [AppComponent],
 })

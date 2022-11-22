@@ -19,6 +19,6 @@ import { FormControl } from '@angular/forms';
   `,
 })
 export class ShareCalendar {
-  @Input() nane: string;
+  @Input() name: string;
   @Input() formControl: FormControl;
 }
