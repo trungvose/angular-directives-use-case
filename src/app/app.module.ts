@@ -23,14 +23,14 @@ import { ShareCalendar } from './shared-calendar.component';
     RouterModule,
     CalendarModule,
     NoopAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SafeLinkDirective,
+    SafeLinkGlobalDirective,
   ],
   declarations: [
     AppComponent,
     ButtonComponent,
     ButtonV2Component,
-    SafeLinkDirective,
-    SafeLinkGlobalDirective,
     TwitterIconComponent,
     CalendarDirective,
     ShareCalendar,
