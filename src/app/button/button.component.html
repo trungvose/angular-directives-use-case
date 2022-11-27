@@ -1,7 +1,7 @@
 <ng-container [ngSwitch]="buttonMode()">
   <button
     *ngSwitchCase="'button'"
-    class="button focus-link"
+    class="button"
     [ngClass]="'btn-' + buttonTheme"
     [attr.aria-label]="ariaLabel"
     [attr.disabled]="isDisabled ? true : null"
@@ -16,7 +16,7 @@
 
   <a
     *ngSwitchCase="'internalURL'"
-    class="button focus-link"
+    class="button"
     [ngClass]="'btn-' + buttonTheme"
     [routerLink]="redirectURL"
     [queryParams]="queryParams"
@@ -32,7 +32,7 @@
 
   <a
     *ngSwitchCase="'externalURL'"
-    class="button focus-link"
+    class="button"
     [ngClass]="'btn-' + buttonTheme"
     [href]="redirectURL"
     [attr.target]="isTargetBlank ? '_blank' : null"
