@@ -14,6 +14,7 @@ import { CalendarModule } from 'primeng/calendar';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarDirective } from './p-calendar.directive';
 import { ShareCalendar } from './shared-calendar.component';
+import { SimpleFormComponent } from './simple-form/simple-form.component';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { ShareCalendar } from './shared-calendar.component';
     TwitterIconComponent,
     CalendarDirective,
     ShareCalendar,
+    SimpleFormComponent,
   ],
   bootstrap: [AppComponent],
 })
