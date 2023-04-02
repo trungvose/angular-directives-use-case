@@ -1,9 +1,18 @@
 <h1>Practical Angular Directives</h1>
-<a
-  target="_blank"
-  href="https://slides.com/tuantrungvo/angular-directives-practical-use-cases"
-  >View slides ↗️</a
->
+<ul>
+  <li>
+    <a target="_blank" href="https://trungk18.com/ngromeconf-2022"
+      >Design better Angular components with those principles slide ↗️</a
+    >
+  </li>
+  <li>
+    <a
+      target="_blank"
+      href="https://slides.com/tuantrungvo/angular-directives-practical-use-cases"
+      >Practical Angular Directives slides ↗️</a
+    >
+  </li>
+</ul>
 
 <h2>1. Think CSS Selector</h2>
 <h3>Open link a new tab use case</h3>
@@ -36,14 +45,11 @@
   </shared-button>
 
   <a href="https://trungk18.com/" target="_blank">
-    <shared-button
-      [buttonContent]="readmoreTmpl"
-      [buttonTheme]="'primary'"
-    >
+    <shared-button [buttonContent]="readmoreTmpl" [buttonTheme]="'primary'">
       <ng-template #readmoreTmpl> Readmore ↗ </ng-template>
     </shared-button>
   </a>
-    
+
   <shared-button
     [buttonContent]="readmoreTmpl"
     [buttonTheme]="'primary'"
